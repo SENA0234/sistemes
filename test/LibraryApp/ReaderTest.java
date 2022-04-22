@@ -51,111 +51,89 @@ public class ReaderTest {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getId method, of class Reader.
-     */
+   
     @Test
-    public void testGetId() {
+    public void testGetiSetId() {
         System.out.println("getId");
         Reader instance = new Reader();
-        String expResult = "";
+        String nom = "11AJ3";
+        instance.setId(nom);
+        String expResult = nom;
         String result = instance.getId();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of setId method, of class Reader.
-     */
-    @Test
-    public void testSetId() {
-        System.out.println("setId");
-        String id = "";
-        Reader instance = new Reader();
-        instance.setId(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of getName method, of class Reader.
-     */
+    
+    
     @Test
-    public void testGetName() {
+    public void testGetiSetName() {
         System.out.println("getName");
         Reader instance = new Reader();
-        String expResult = "";
+        String nom = "FRANCISCO";
+        String expResult = nom;
         String result = instance.getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
-    /**
-     * Test of setName method, of class Reader.
-     */
-    @Test
-    public void testSetName() {
-        System.out.println("setName");
-        String name = "";
-        Reader instance = new Reader();
-        instance.setName(name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
 
     /**
      * Test of getBorrowedBooks method, of class Reader.
      */
     @Test
-    public void testGetBorrowedBooks() {
+    public void testGetiSetBorrowedBooks() {
         System.out.println("getBorrowedBooks");
-        Reader instance = new Reader();
-        ArrayList<Book> expResult = null;
-        ArrayList<Book> result = instance.getBorrowedBooks();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setBorrowedBooks method, of class Reader.
-     */
-    @Test
-    public void testSetBorrowedBooks() {
-        System.out.println("setBorrowedBooks");
-        ArrayList<Book> borrowedBooks = null;
+         ArrayList<Book> borrowedBooks = new ArrayList<>();
+         Book b1 = new Book();
+         b1.setId("44");
+         b1.setTitle("QUIJOTE");
+         
+         Book b2 = new Book();
+        b2.setId("45P");
+        b2.setTitle("ALBERTO");
+         borrowedBooks.add(b1);
+         borrowedBooks.add(b2);
+       
+                 
         Reader instance = new Reader();
         instance.setBorrowedBooks(borrowedBooks);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ArrayList<Book> result = instance.getBorrowedBooks();
+        assertEquals(borrowedBooks, result);
+       
     }
 
-    /**
-     * Test of receiveBook method, of class Reader.
-     */
+
     @Test
     public void testReceiveBook() {
         System.out.println("receiveBook");
-        Book book = null;
+        
+      
+        Book book = new Book();
+        book.setId("4");
+        book.setTitle("PERE");
+        
         Reader instance = new Reader();
         instance.receiveBook(book);
+        
+        
+        assertEquals(instance.getBorrowedBooks().contains(book),true);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
-    /**
-     * Test of giveBook method, of class Reader.
-     */
+    
     @Test
     public void testGiveBook() {
         System.out.println("giveBook");
-        Book book = null;
+        Book book = new Book();
+        book.setId("4");
+        book.setTitle("PERE");
         Reader instance = new Reader();
         instance.giveBook(book);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        assertEquals(instance.getBorrowedBooks().contains(book),false);
     }
     
 }

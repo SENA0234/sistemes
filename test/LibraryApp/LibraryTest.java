@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author alexc
+ * @author Alex
  */
 public class LibraryTest {
     
