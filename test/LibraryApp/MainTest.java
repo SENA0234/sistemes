@@ -36,28 +36,9 @@ public class MainTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of main method, of class Main.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Main.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of showMenu method, of class Main.
-     */
-    @Test
-    public void testShowMenu() {
-        System.out.println("showMenu");
-        Main.showMenu();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+
+
 
     /**
      * Test of initLibraryData method, of class Main.
@@ -75,8 +56,9 @@ public class MainTest {
      */
     @Test
     public void testChooseMenu() {
+        
         System.out.println("chooseMenu");
-        int expResult = 0;
+        int expResult = 7;
         int result = Main.chooseMenu();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
